@@ -5,16 +5,11 @@
 
 # Install Dependencies
 
-- npm install -g lerna
 - npm install
 - npm bootstrap
 
 # Developing
 
-## Start Watcher
+## Start Development
 
-- npm run watch
-
-## Start Lambda
-
-- npm run lambda
+- npm run dev
