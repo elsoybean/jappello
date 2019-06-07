@@ -1,6 +1,8 @@
 // @flow
 import babel from 'rollup-plugin-babel';
+import resolve from 'rollup-plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
+import commonjs from 'rollup-plugin-commonjs';
 
 module.exports = {
   input: 'src/index.js',
@@ -9,7 +11,10 @@ module.exports = {
     format: 'cjs',
   },
   plugins: [
-    terser(),
+    resolve({
+      module: true,
+      preferBuiltins: true,
+    }),
     babel({
       exclude: 'node_modules/**',
       plugins: [
@@ -29,5 +34,7 @@ module.exports = {
         '@babel/preset-flow',
       ],
     }),
+    commonjs(),
+    terser(),
   ],
 };
