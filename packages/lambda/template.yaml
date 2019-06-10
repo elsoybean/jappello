@@ -14,8 +14,8 @@ Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: node_modules/test-sam/lib/
-      Handler: bundle.lambdaHandler
+      CodeUri: node_modules #/jplo-api/lib/
+      Handler: jplo-api.lambdaHandler
       Runtime: nodejs10.x
       Events:
         HelloWorld:

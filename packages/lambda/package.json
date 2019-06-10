@@ -7,7 +7,7 @@
     "dev": "sam local start-api --region us-east-1"
   },
   "dependencies": {
-    "test-sam": "1.0.0"
+    "jplo-api": "1.0.0"
   },
   "author": "",
   "license": "Apache-2.0"

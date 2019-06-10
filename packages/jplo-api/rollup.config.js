@@ -1,7 +1,7 @@
 // @flow
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+//import { terser } from 'rollup-plugin-terser';
 import commonjs from 'rollup-plugin-commonjs';
 
 module.exports = {
@@ -34,7 +34,11 @@ module.exports = {
         '@babel/preset-flow',
       ],
     }),
-    commonjs(),
-    terser(),
+    commonjs({
+      namedExports: {
+        'node_modules/graphql-tools/dist/index.js': ['makeExecutableSchema'],
+      },
+    }),
+    //terser(),
   ],
 };

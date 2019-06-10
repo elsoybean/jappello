@@ -1,11 +1,13 @@
 {
-  "name": "test-sam",
+  "name": "jplo-api",
   "version": "1.0.0",
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "rollup --config",
-    "build:watch": "rollup --config -w",
+    "build": "babel --root-mode upward src/ -d lib/",
+    "build:watch": "npm run build -- -w --verbose",
+    "bundle": "rollup --config",
+    "bundlewatch": "rollup --config -w",
     "dev": "npm run build:watch",
     "prepublish": "npm run build"
   },
@@ -14,6 +16,8 @@
     "@babel/core": "^7.4.5",
     "@babel/polyfill": "^7.4.4",
     "graphql": "^14.3.1",
+    "graphql-tag": "^2.10.1",
+    "graphql-tools": "^4.0.4",
     "gulp": "^4.0.2",
     "uuid": "^3.3.2"
   },
